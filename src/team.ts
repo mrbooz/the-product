@@ -29,8 +29,16 @@ export function renderTeam(mount: HTMLElement): HTMLUListElement {
     const role = document.createElement("span");
     role.className = "team-role";
     role.textContent = member.role;
-    row.append(name, role);
-    row.title = member.on;
+    // Not a title attribute: a tooltip is unreachable by keyboard and does
+    // not exist at all on touch, so the sentence would be invisible to most
+    // readers (Nadia, review of TMP-1).
+    const on = document.createElement("span");
+    on.className = "team-on";
+    on.textContent = member.on;
+    const who = document.createElement("span");
+    who.className = "team-who";
+    who.append(name, role);
+    row.append(who, on);
     list.append(row);
   }
   mount.append(list);

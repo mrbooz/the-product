@@ -66,11 +66,21 @@ h1 {
 }
 
 .team-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #e7e7e0;
+}
+
+.team-who {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.6rem 0;
-  border-bottom: 1px solid #e7e7e0;
+}
+
+.team-on {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.875rem;
+  color: #8a8a80;
 }
 
 .team-name {
